@@ -389,23 +389,8 @@ func main() {
 	if err != nil {
 		log.Fatal("Error writing nu-tech-detect.yaml: ", err.Error())
 	}
-
 	log.Printf("Wrote %d matchers to nu-tech-detect.yaml\n", len(matchers))
 
-	// Write out mega-workflow that looks like:
-	// id: wordpress-workflow
-	// info:
-	//   name: Wordpress Security Checks
-	//   author: kiblyn11,zomsop82
-	//   description: A simple workflow that runs all wordpress related nuclei templates on a given target.
-
-	// workflows:
-
-	//   - template: technologies/tech-detect.yaml
-	//     matchers:
-	//       - name: wordpress
-	//         subtemplates:
-	//           - tags: wordpress
 	log.Println("Building workflow")
 	workflowTemplate := WorkflowTemplate{
 		ID: "megazord-workflow",
